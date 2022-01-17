@@ -42,5 +42,17 @@ body {
 }
 
 /* USER STYLES */
+body, html {
+  height: 100%;
+}
+
+.showcase {
+  background-color: #000;
+  height: 100%;
+  position: relative;
+  color: white;
+  overflow: hidden;
+}
+
 
 
