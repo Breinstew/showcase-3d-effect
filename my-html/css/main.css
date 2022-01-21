@@ -174,7 +174,26 @@ body, html {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+}
 
+.showcase-carousel__image-left {
+  perspective-origin: left center;
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+.showcase-carousel__image-right {
+  perspective-origin: right center;
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+.showcase-carousel__image-left .showcase-carousel__image {
+  animation: k-left-side 2s ease-in-out infinite;
+  animation-direction: alternate;
+}
+
+.showcase-carousel__image-right .showcase-carousel__image {
+  animation: k-right-side 2s ease-in-out infinite;
+  animation-direction: alternate;
 }
 
 
@@ -201,6 +220,25 @@ body, html {
   }
   100% {
     opacity: .6;
+  }
+}
+
+/*Анимация для левой части картинки*/
+@keyframes k-left-side {
+  0% {
+    transform: rotateY(-1deg) scaleX(.92);
+  }
+  100% {
+    transform: rotateY(0deg) scaleX(1);
+  }
+}
+/*Анимация для правой части картинки*/
+@keyframes k-right-side {
+  0% {
+    transform: rotateY(0deg) scaleX(1);
+  }
+  100% {
+    transform: rotateY(+1deg) scaleX(.92);
   }
 }
 
